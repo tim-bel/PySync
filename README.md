@@ -1,2 +1,14 @@
-# PySync
-A python syncing app from one source to multiple destinations.
+PySync - Folder Synchronization ToolPySync is a simple, cross-platform graphical tool built with Python and PyQt6 to help you synchronize a single source folder to one or more destination folders.It's designed for one-way "push" synchronization, making it perfect for backing up projects, documents, or media to multiple locations (like an external drive and a network share) at the same time.FeaturesOne-to-Many Sync: Back up one source folder to multiple destination folders in a single operation.Smart Synchronization: Only copies new files or files that have been modified (based on file modification time).Non-Blocking UI: The sync operation runs in a separate thread, so the application remains responsive even during large transfers.Dry Run Mode: Simulate a synchronization run without copying, moving, or deleting any files. The log will show you exactly what would have happened.Real-time Log: A clear log output window shows which files are being copied and which directories are being created.Safe: This tool only adds or updates files in the destination. It will not delete any files from the destination folders.How it WorksThe tool recursively walks through your chosen Source Folder. For each file, it compares it against the corresponding file in each Destination Folder:If the file doesn't exist in the destination, it's copied over.If the file does exist, the tool compares the modification times.If the source file is newer than the destination file, it's copied over (overwriting the older version).If the source file is older or the same age, it's skipped to save time.This entire process runs in the background, with progress reported to the Log window, ensuring the main application window never freezes.RequirementsTo run this application, you will need:Python 3.6+PyQt6InstallationClone the repository:git clone [https://github.com/your-username/PySync.git](https://github.com/your-username/PySync.git)
+cd PySync
+(If you don't use Git, you can just download PySync.py.)Install the necessary dependencies:It's highly recommended to use a virtual environment.# Create a virtual environment
+python -m venv venv
+# Activate it
+# On Windows:
+.\venv\Scripts\activate
+# On macOS/Linux:
+source venv/bin/activate
+
+# Install PyQt6
+pip install PyQt6
+UsageOnce your environment is activated and PyQt6 is installed, you can run the application:python PySync.py
+Steps to Use the App:Select Source Folder: Click "Browse..." to choose the main folder you want to copy from.Add Destination Folders: Click "Add Folder" to select a folder you want to copy to. You can add as many destinations as you like.Manage Destinations: If you add a folder by mistake, click it in the list and press "Remove Selected".Choose Mode (Optional): Check the "Dry Run" box if you want to simulate the sync and see what changes would be made in the log.Start Sync: Click the "Start Sync" button. The UI controls will be disabled, and the log will fill with progress.Done: You'll receive a confirmation message when the sync is complete.LicenseThis project is licensed under the MIT License. See the LICENSE file for details.
