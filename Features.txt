@@ -1,8 +1,3 @@
-This is a great, well-structured app\! You've correctly used `QThread` and `QObject.moveToThread` which is the recommended way to handle long-running tasks in PyQt and prevent the GUI from freezing.
-
-Here are several ways to make this app even better, building directly on your ideas and adding a few more.
-
------
 
 ## 🚀 Addressing Your Ideas
 
